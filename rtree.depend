@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1573158229 source:d:\rtree\main.cpp
+	<GLUT/glut.h>
+	<windows.h>
+	<GL/glut.h>
+	<stdlib.h>
+
+976692172 d:\glut\include\gl\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1573158518 source:d:\rtree\rtree.cpp
+	"rtree.h"
+	<math.h>
+	<algorithm>
+
+1573158138 d:\rtree\rtree.h
+

@@ -57,9 +57,9 @@ void RTree::escogerSemillas(Nodo* n,rectangulo* e1,rectangulo* e2){
     }
 }
 
-bool RTree::escogerSiguiente(Nodo* n,rectangulo s1,rectangulo s2){
-    int a1=getArea(n->regs[i],s1);
-    int a2=getArea(n->regs[i],s2);
+bool RTree::escogerSiguiente(rectangulo n,rectangulo s1,rectangulo s2){
+    int a1=getArea(n,s1);
+    int a2=getArea(n,s2);
     return(a1<a2);
 }
 
@@ -75,8 +75,29 @@ void RTree::insertar(rectangulo r){
         escogerSemillas(n,e1,e2);
         rectangulo g1[BUCKET/2+1];
         rectangulo g2[BUCKET/2+1];
+        int c1=0,c2=0;
         for(int i=0;i<n->ir;++i){
-
+            if(escogerSiguiente(n->regs[i],(*e1),(*e2))){
+                if(c2<BUCKET/2+1){
+                    g2[c2]=n->regs[i];
+                    c2++;
+                }
+                else{
+                    g1[c1]=n->regs[i];
+                    c1++;
+                }
+            }
+            else{
+                if(c1<BUCKET/2+1){
+                    g1[c1]=n->regs[i];
+                    c1++;
+                }
+                else{
+                    g2[c2]=n->regs[i];
+                    c2++;
+                }
+            }
         }
+
     }
 }

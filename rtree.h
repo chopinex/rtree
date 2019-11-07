@@ -32,7 +32,7 @@ class RTree{
     Nodo* escogerHoja(Nodo*,rectangulo);
     void ajustarArbol();
     void escogerSemillas(Nodo*,rectangulo*,rectangulo*);
-    bool escogerSiguiente(Nodo*,rectangulo,rectangulo);
+    bool escogerSiguiente(rectangulo,rectangulo,rectangulo);
     void dividirNodo();
 public:
     Nodo* raiz;
